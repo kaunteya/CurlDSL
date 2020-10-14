@@ -150,6 +150,7 @@ struct Lexer {
 			} else {
 				options.append(.user(components[0], nil))
 			}
+        case "-v", "-s": break
 		default:
 			throw ParserError.noSuchOption(token)
 		}
@@ -202,6 +203,7 @@ struct Lexer {
 			} else {
 				options.append(.user(userPassword[0], nil))
 			}
+        case "--verbose", "--silent": break
 		default:
 			throw ParserError.noSuchOption(components[0])
 		}
